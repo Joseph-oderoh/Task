@@ -1,0 +1,34 @@
+.container{
+    margin: 30px auto;
+    background-color: blue;
+    padding: 20px;
+    max-width: 900px;
+
+}
+h1{
+    color: brown;
+    text-align: center;
+    background-color: wheat;
+    margin: 10px auto;
+}
+ ul{
+     list-style-type: none;
+     font-weight: 600; 
+      border: 2px solid white;
+      background-color: rgba(0, 0, 0, 0.468);
+      border-radius: 45px;
+      max-height: 500px;
+
+}
+
+li{
+    padding: 20px;
+    margin:  50px;
+}  
+.btn{
+ text-align: right;
+ margin: 20px;
+ border-radius: 45px;
+ background-color: black;
+ color: white;
+}

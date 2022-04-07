@@ -1,0 +1,30 @@
+<div class="container">
+
+
+<div class="row">
+    <div class="col-md-6">
+<div class="container" *ngFor="let list of lists; let i = index">
+    <hr>
+    
+            <ul>
+                <li appStrikethrough>
+            <!-- *ngFor = 'let variable of variablelist' -->
+                    {{ list.id }}
+                    {{ list.task }}
+                    due on {{ list.completeDate | date}}
+                    </li>
+                    <button class="btn" (click)='toggleDetails(i)'>Toggle Details</button>
+                    <app-task-details *ngIf='list.showAbout'  [list]="list" (isComplete) = 'deleteList($event,i)'> </app-task-details>
+              
+                <!--! The ngFor element is used to elements based on the condition of the For loop. -->
+                </ul>
+            
+        </div>
+       
+    </div>
+    <div class="col-md-6">
+        <app-task-form (addList)="addNewList($event)"></app-task-form>
+    </div>
+   
+</div>
+</div>

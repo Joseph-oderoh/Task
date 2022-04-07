@@ -1,0 +1,33 @@
+<div class="container-fluid">
+    <hr>
+    <h2 class="text-center">Create a new task</h2>
+    <form (ngSubmit)='submitList()' #listForm='ngForm'>
+        <div class="form-group">
+
+            <label for="name">Task</label>
+            <input type="text" required class="form-control" [(ngModel)]="newList.task" name="task" #task='ngModel' required id="task">
+            <div [hidden]="task.valid || task.pristine" class="alert alert-danger">
+                <p>Name is required</p>
+              </div>
+            <!-- Testing to see if we get any data -->
+            <!-- Display {{ newList.task }} -->
+        </div>
+        <div class="form-group">
+
+            <label for="about">About</label>
+            <textarea class="form-control" id="about" rows="4" [(ngModel)]="newList.about" name="about" #about='ngModel' required></textarea>
+            <div [hidden]="about.valid || about.pristine" class="alert alert-danger">
+                <p>About is required</p>
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="complete">Completion</label>
+            <input type='date' id="complete"  [(ngModel)]="newList.completeDate" name="completeDate" #completeDate="ngModel" required>
+            <div [hidden]="completeDate.valid || completeDate.pristine" class="alert alert-danger">
+                <p>Date is required</p>
+              </div>
+        </div>
+        <button type="submit"  class="btn btn-success"> Add </button>
+    </form>
+</div>
+
